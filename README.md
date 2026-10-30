@@ -1,5 +1,7 @@
 # claude-code-dockerized
 
+[![Lint](https://github.com/loganmarchione/dockerized-claude-code/actions/workflows/lint.yml/badge.svg)](https://github.com/loganmarchione/dockerized-claude-code/actions/workflows/lint.yml)
+
 ## Usage
 
 ```
