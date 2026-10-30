@@ -1,0 +1,35 @@
+---
+name: Lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  schedule:
+    - cron: "0 5 * * 0"
+  workflow_dispatch:
+
+jobs:
+  yamllint:
+    name: yamllint
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the codebase
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Install yamllint
+        run: |
+          python3 --version
+          pip3 install --user yamllint
+          yamllint --version
+
+      - name: List files to yamllint
+        run: |
+          yamllint --list-files .
+
+      - name: Run yamllint
+        run: |
+          yamllint .
